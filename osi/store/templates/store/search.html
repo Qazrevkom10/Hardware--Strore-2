@@ -1,0 +1,20 @@
+{% extends 'store/main.html' %}
+
+{% block content %}
+  <h1>Search for products</h1>
+
+  <form method="get">
+    {{ form }}
+    <button type="submit">Search</button>
+  </form>
+
+  {% if products %}
+    <h2>Results:</h2>
+
+    <ul>
+      {% for product in products %}
+        <li>{{ product.name }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
